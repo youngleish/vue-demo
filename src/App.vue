@@ -3,12 +3,14 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <ComponentsTest/>
     <SlotTest/>
+    <FormTest/>
   </div>
 </template>
 
 <script>
 import ComponentsTest from "./components/communication";
 import SlotTest from './components/slots';
+import FormTest from './components/form';
 
 export default {
   name: "app",
@@ -24,7 +26,7 @@ export default {
     };
   },
   components: {
-    ComponentsTest, SlotTest
+    ComponentsTest, SlotTest, FormTest
   },
   methods: {
     modifyMsg(e) {
@@ -42,5 +44,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin-bottom: 100px;
 }
 </style>
