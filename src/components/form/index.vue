@@ -16,6 +16,11 @@
       </VFormItem>
     </VForm>
     <p>{{ model }}</p>
+    <h2>.sync测试</h2>
+    <div>
+      <!-- <VSync :msg.sync="model.username"></VSync> -->
+      <VSync :msg="model.username" @update:msg="handleValue($event)"></VSync>
+    </div>
   </div>
 </template>
 
@@ -24,12 +29,14 @@ import VInput from "./VInput.vue";
 import VCheckedbox from './VCheckedbox.vue';
 import VFormItem from "./VFormItem.vue";
 import VForm from "./VForm.vue";
+import VSync from "./VSync.vue"
 export default {
   components: {
     VInput,
     VFormItem,
     VForm,
-    VCheckedbox
+    VCheckedbox,
+    VSync
   },
   data() {
     return {
