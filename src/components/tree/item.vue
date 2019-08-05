@@ -21,9 +21,6 @@
                 open: false
             }
         },
-        // mounted() {
-        //     console.log(this.model)
-        // },
         computed: {
             isFoldre() {
                 return this.model.children && this.model.children.length;
