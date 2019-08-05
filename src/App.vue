@@ -4,6 +4,7 @@
     <ComponentsTest/>
     <SlotTest/>
     <FormTest/>
+    <TreeTest></TreeTest>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import ComponentsTest from "./components/communication";
 import SlotTest from './components/slots';
 import FormTest from './components/form';
+import TreeTest from './components/tree';
 
 export default {
   name: "app",
@@ -26,7 +28,7 @@ export default {
     };
   },
   components: {
-    ComponentsTest, SlotTest, FormTest
+    ComponentsTest, SlotTest, FormTest, TreeTest
   },
   methods: {
     modifyMsg(e) {
