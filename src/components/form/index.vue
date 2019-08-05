@@ -30,6 +30,8 @@ import VCheckedbox from './VCheckedbox.vue';
 import VFormItem from "./VFormItem.vue";
 import VForm from "./VForm.vue";
 import VSync from "./VSync.vue"
+import VNotice from "../Notice"
+import create from "@/util/create"
 export default {
   components: {
     VInput,
@@ -58,12 +60,14 @@ export default {
     },
     onLogin() {
       // 传给校验函数一个回调函数，校验函数在回调函数中传校验结果
-      this.$refs.loginForm.validate(isValidate => {
-        if (isValidate) {
-          alert("校验成功");
-        } else {
-          alert("校验失败");
-        }
+      this.$refs.loginForm.validate(isValid => {
+        console.log(VNotice);
+        let notice = create(VNotice, {
+          msg: isValid ? "登录" : "有错！！！",
+          duration: 20000
+        })
+        
+        notice.show();
       });
     }
   }
