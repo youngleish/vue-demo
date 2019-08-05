@@ -9,7 +9,7 @@
         <VInput v-model="model.password" type="password"></VInput>
       </VFormItem>
       <VFormItem label="记住密码" prop="agree">
-        <VCheckedbox v-model="model.agree" type="checkbox"></VCheckedbox>  
+        <VCheckedbox v-model="model.agree" type="checkbox"></VCheckedbox>
       </VFormItem>
       <VFormItem>
         <button @click="onLogin">登录</button>
@@ -61,12 +61,11 @@ export default {
     onLogin() {
       // 传给校验函数一个回调函数，校验函数在回调函数中传校验结果
       this.$refs.loginForm.validate(isValid => {
-        console.log(VNotice);
         let notice = create(VNotice, {
           msg: isValid ? "登录" : "有错！！！",
           duration: 20000
         })
-        
+
         notice.show();
       });
     }

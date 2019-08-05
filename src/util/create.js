@@ -8,6 +8,7 @@ export default function create (Component, props) {
             return h(Component, {props})// 需要了解{props}这种传参方式
         }
     }).$mount();
+    // console.log(vm);
 
     // 2. 找到组件, 并把dom挂载到body上
     const comp = vm.$children[0];
