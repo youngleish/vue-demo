@@ -1,11 +1,11 @@
 <template>
-    <li class="item">
+    <li>
         <div class="item-head" @click="toggle">
-            <h3>{{model.title}}</h3>
-            <span class="item-folder" v-show="isFolder">{{open ? '-' : '+'}}</span>
+            <h4>{{model.title}}</h4>
+            <span class="item-folder" v-if="isFoldre">{{open ? "-" : "+"}}</span>
         </div>
-        <ul>
-            <treeItem v-show="open" v-for="model in model.children" :key="model.title" :model="model"></treeItem>
+        <ul v-show="open" v-if="isFoldre">
+           <treeItem :model="item" v-for="item in model.children" :key="item.title"></treeItem>
         </ul>
     </li>
 </template>
@@ -21,8 +21,11 @@
                 open: false
             }
         },
+        // mounted() {
+        //     console.log(this.model)
+        // },
         computed: {
-            isFolder() {
+            isFoldre() {
                 return this.model.children && this.model.children.length;
             }
         },
@@ -30,7 +33,7 @@
             toggle() {
                 this.open = !this.open
             }
-        }
+        },
     }
 </script>
 
