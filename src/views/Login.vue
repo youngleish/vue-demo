@@ -28,8 +28,8 @@
         methods: {
             onLogin() {
                 let configRoute = this.routes.map(route => this.handleCompMap(route))
-                console.log(configRoute)
-                // 动态添加路由
+                // console.log(configRoute)
+                // // 动态添加路由
                 this.$router.addRoutes(configRoute)
 
                 setTimeout(() => {
