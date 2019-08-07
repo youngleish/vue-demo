@@ -1,7 +1,6 @@
 <template>
     <div class="detail">
         <h1>这里是详情页查看动态路由</h1>
-        <strong>请老师点击home，你会发现回到了/home，但是我的嵌套路由部分内容丢失了</strong>
         <div><span>我是面包屑--------</span><span class="breadcrumb" @click="handleRoutLink(0)">{{crumbDataName[0]}}</span>/<span @click="handleRoutLink(1)">{{crumbDataName[1]}}</span></div>
         <div>{{id}}</div>
         <router-link tag="div" to="/detail/789">跳转到id为789详情页</router-link>
@@ -43,7 +42,7 @@
                 console.log(32323);
                 // this.$router.push("/home")
                 console.log(this.crumbData[index]);
-                this.$router.push(this.crumbData[index])
+                this.$router.push(this.crumbData[index].path)
             }
         },
     }
