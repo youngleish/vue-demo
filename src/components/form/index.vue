@@ -63,7 +63,7 @@ export default {
       this.$refs.loginForm.validate(isValid => {
         let notice = create(VNotice, {
           msg: isValid ? "登录" : "有错！！！",
-          duration: 20000
+          duration: 2000
         })
 
         notice.show();
