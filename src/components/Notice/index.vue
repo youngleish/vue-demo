@@ -1,5 +1,5 @@
 <template>
-    <div v-if="showFlag" class="box">
+    <div v-if="showFlag" class="notice-box">
         <div class="mask"></div>
         <div class="con">
             <h4>{{title}}</h4>
@@ -9,8 +9,6 @@
 </template>
 
 <script>
-    import {clearTimeout} from 'timers';
-
     export default {
         props: {
             title: {
@@ -20,7 +18,7 @@
             msg: [String],
             duration: {
                 type: Number,
-                default: 3000
+                default: 300
             }
         },
         data() {
@@ -38,7 +36,7 @@
             },
             hide() {
                 this.showFlag = false
-                clearTimeout(this.timer);
+                window.clearTimeout(this.timer);
                 this.remove();
             }
         },
@@ -46,7 +44,7 @@
 </script>
 
 <style scoped>
-    .box {
+    .notice-box {
         position: absolute;
         height: 100%;
         width: 100%;
