@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/Home.vue'
-import Login from './views/Login.vue'
+import Home from './views/Home.vue'
+import About from './views/about.vue'
 
 Vue.use(Router) // 引入router插件
 
@@ -11,16 +11,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: Login
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     }
-    // {
-    //   path: '/list',
-    //   name: 'list',
-    //   // route level code-splitting 路由层级代码分割
-    //   // this generates a separate chunk (about.[hash].js) for this route  这种方式会生成about.[hash].js的文件，
-    //   // which is lazy-loaded when the route is visited. 可以让访问路由的时候进行懒加载
-    //   component: () => import(/* webpackChunkName: "about" */ './views/List.vue')
-    // }
   ]
 })
