@@ -11,7 +11,7 @@
                     {
                         path: '/home',
                         name: 'home',
-                        component: "Home",
+                        component: 'Home',
                         children: [
                           {path:'', name: 'list', component: "List"},
                           {path:'/detail/:id', name: 'detail', component: "Detail", props: true}
@@ -19,7 +19,7 @@
                     }
                 ],
                 compMap: { // 路由映射关系
-                    Home:  () => import('./Home.vue'),
+                    Home:  () => import('./Home'),
                     List: () => import('./List'),
                     Detail: () => import('./Detail'),
                 }

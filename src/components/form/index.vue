@@ -8,7 +8,7 @@
       <VFormItem label="密码" prop="password">
         <VInput v-model="model.password" type="password"></VInput>
       </VFormItem>
-      <VFormItem label="记住密码" prop="agree">
+      <VFormItem label="记住密码">
         <VCheckedbox v-model="model.agree" type="checkbox"></VCheckedbox>
       </VFormItem>
       <VFormItem>
@@ -30,7 +30,7 @@ import VCheckedbox from './VCheckedbox.vue';
 import VFormItem from "./VFormItem.vue";
 import VForm from "./VForm.vue";
 import VSync from "./VSync.vue"
-import VNotice from "../Notice"
+import VNotice from "../notice"
 import create from "@/util/create"
 export default {
   components: {
@@ -49,8 +49,7 @@ export default {
       },
       rules: {
         username: [{ required: true, message: "请输入用户名" }],
-        password: [{ required: true, message: "请输入密码" }],
-        agree: [{required: true, message: "请阅读登录协议，并勾选已读"}]
+        password: [{ required: true, message: "请输入密码" }]
       }
     };
   },

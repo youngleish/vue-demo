@@ -9,6 +9,8 @@
 <script>
     import Schema from 'async-validator';
     export default {
+        name: 'VFormItem',
+        componentName: 'VFormItem',
         props: {
             label: {
                 type: String,
@@ -27,31 +29,34 @@
         mounted () {
             // 监听校验事件，并执行监听
             this.$on("validate", () => {
-                this.validata();
+                this.validate();
             });
         },
         methods: {
-            validata() {
-                // 执行校验
+            validate() {
+                // 执行组件校验
                 // 1.获取校验规则
-                const rule = this.form.rules[this.prop];
+                const rules = this.form.rules[this.prop];
+
                 // 2.获取数据
                 const value = this.form.model[this.prop];
-                // 3.进行校验
-                let desc = {
-                    [this.prop]: rule
-                }
+
+                // 3.执行校验
+                const desc = {
+                    [this.prop]: rules
+                };
                 const schema = new Schema(desc);
-                // 参数1是要校验的值
-                // 返回Promise<boolean>
-                return schema.validate({[this.prop]: value}, errors => {
+                //   参数1是值,参数2是校验错误对象数组
+                //   返回的Promise<boolean>
+                return schema.validate({ [this.prop]: value }, errors => {
                     if (errors) {
+                        // 有错
                         this.errMsg = errors[0].message;
                     } else {
-                        // 清空错误信息
-                        this.errMsg = ''
+                        // 没错，清除错误信息
+                        this.errMsg = "";
                     }
-                })
+                });
             }
         },
     }

@@ -5,6 +5,7 @@ import Login from './views/Login.vue'
 
 Vue.use(Router) // 引入router插件
 
+/* eslint-disable */
 export default new Router({
   mode: 'history', // 有3中模式 hash | history | abstract
   base: process.env.BASE_URL, // 设置baseUrl 比如http://abc.com/cart，后面所有的路由都会自动带有cart

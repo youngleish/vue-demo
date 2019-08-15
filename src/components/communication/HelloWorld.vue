@@ -5,14 +5,17 @@
     <p>{{ firstname }} - {{ lastname }}</p>
     <p>{{ middleName }}</p>
     <p>{{ ancenstors.origin }}</p>
-    <NewChild1/>>
+    <NewChild1/>
+    <p @click="broadcast('GrandChild', 'changeChild1Msg', '来自helloWorld的祖辈组件数据')">广播子元素grandChild</p>
  </div>
 </template>
 
 <script>
+import emitter from "../../mixin/emitter";
 import NewChild1 from './Child1.vue';
 export default {
   name: "HelloWorld",
+  mixins: [emitter],
   components: {
     NewChild1
   },

@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'VForm',
+  componentName: 'VForm',
   props: {
     model: {
       type: Object,
@@ -26,9 +28,8 @@ export default {
       const tasks = this.$children
         .filter(item => item.prop)
         .map(item => {
-          item.validata();
+          return item.validate();
         });
-      // console.log(tasks);
       Promise.all(tasks)
         .then(() => cb(true))
         .catch(() => cb(false));
