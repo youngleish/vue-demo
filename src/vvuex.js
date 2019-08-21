@@ -40,14 +40,15 @@ class store {
     }
     // getter: {score(state) {return state.xx}}
     handleGetters(getters) {
-        this.getters = {} // store实例上的getters
-        // 定义只读的属性
+        this.getters = {}
+
+        // 定义只读属性
         Object.keys(getters).forEach(key => {
             Object.defineProperty(this.getters, key, {
                 get: () => {
                     return getters[key](this.state)
                 }
-            })
+            })            
         })
     }
 }
