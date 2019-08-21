@@ -10,7 +10,8 @@
 <script>
 import ComponentsTest from "./components/communication";
 import SlotTest from './components/slots';
-import VuexTest from './components/vuexTest';
+// import VuexTest from './components/vuexTest';
+import VuexTest from './components/vuexTest/vindex';
 
 export default {
   name: "app",
