@@ -3,12 +3,14 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <ComponentsTest/>
     <SlotTest/>
+    <vuexTest/>
   </div>
 </template>
 
 <script>
 import ComponentsTest from "./components/communication";
 import SlotTest from './components/slots';
+import VuexTest from './components/vuexTest';
 
 export default {
   name: "app",
@@ -24,7 +26,7 @@ export default {
     };
   },
   components: {
-    ComponentsTest, SlotTest
+    ComponentsTest, SlotTest, VuexTest
   },
   methods: {
     modifyMsg(e) {
